@@ -1,108 +1,126 @@
-# FlyRank Capstone — Simple Dashboard
+Simple Dashboard
 
-## What it does
+Production URL
 
-This project is a simple responsive dashboard website created for the FlyRank capstone. It provides a clean home page and separate Dashboard, Projects, Settings, and Health screens.
+https://YOUR-VERCEL-URL.vercel.app
 
-## Features
+What It Does
 
-- Responsive dashboard layout
-- Simple navigation between pages
-- Project status cards
-- Application health screen
-- Mobile-friendly design
-- Production-ready Next.js structure
-- Environment-variable template
-- No secret API keys committed to Git
+Simple Dashboard is a lightweight Next.js dashboard application with separate pages for Home, Dashboard, Projects, Settings, and Health.
 
-## Screenshots
+The dashboard currently uses sample/demo data to demonstrate the user interface and routing.
 
-Add your production screenshots here after deployment.
+Features
 
-Example:
+- Responsive dashboard interface
+- Home page
+- Dashboard with sample project and task statistics
+- Projects page
+- Settings page
+- Health/status page
+- Next.js App Router
+- Production deployment with Vercel
 
-![Home screenshot](./public/home-screenshot.png)
+Screenshots
 
-![Dashboard screenshot](./public/dashboard-screenshot.png)
+Home
 
-## Tech stack
+Add a screenshot of the deployed Home page here.
 
-- Next.js
-- React
-- JavaScript
-- CSS
-- Vercel for deployment
+Dashboard
 
-## Run locally
+Add a screenshot of the deployed Dashboard page here.
 
-1. Install Node.js.
-2. Extract this project.
-3. Open the project folder in VS Code.
-4. Open a terminal in the project folder.
-5. Run:
+Projects
 
-```bash
+Add a screenshot of the deployed Projects page here.
+
+Run Locally
+
+Clone the repository and install the dependencies:
+
 npm install
+
+Start the development server:
+
 npm run dev
-```
 
-6. Open `http://localhost:3000`.
+Open:
 
-## Environment variables
+http://localhost:3000
 
-Copy `.env.example` to `.env.local` if an AI provider key is required later.
+Environment Variables
 
-| Variable | Required | Description |
-|---|---|---|
-| `GEMINI_API_KEY` | Optional | API key for a future Gemini-powered route |
+The project currently does not require an API key to run.
 
-Never commit `.env.local` or a real API key.
+Variable| Required| Description
+"GEMINI_API_KEY"| No| Reserved for a future AI integration
 
-## Architecture
+Never commit private API keys or ".env.local" files to GitHub.
 
-```text
-app/
-├── page.js
-├── dashboard/page.js
-├── projects/page.js
-├── settings/page.js
-├── health/page.js
-├── layout.js
-└── globals.css
-```
+Architecture Overview
 
-The application uses Next.js App Router. Each dashboard screen is a separate route and the shared navigation is repeated in the simple page components.
+The project uses Next.js with the App Router.
 
-## Production deployment
+simple-dashboard/
+├── app/
+│   ├── dashboard/
+│   ├── projects/
+│   ├── settings/
+│   ├── health/
+│   ├── globals.css
+│   ├── layout.js
+│   └── page.js
+├── public/
+├── .env.example
+├── .gitignore
+├── package.json
+├── package-lock.json
+└── README.md
 
-The application can be deployed to Vercel:
+Each route is implemented as a separate page inside the "app" directory.
 
-1. Push the project to GitHub.
-2. Import the repository into Vercel.
-3. Use the default Next.js build settings.
-4. Add production environment variables only when required.
-5. Deploy.
-6. Open the public URL and test Home, Dashboard, Projects, Settings, and Health.
+Technical Decisions
 
-## Production hygiene
+- Next.js: Used for the application framework and routing.
+- App Router: Keeps each dashboard section organized as a separate route.
+- Vercel: Used for production deployment because it provides straightforward deployment for Next.js applications.
+- Demo data: Sample data is used because this version does not connect to a production database or external user account system.
 
-This project does not expose API keys in source code. Input limits should be added to any future AI/API route before enabling it publicly. For streaming routes, use a sensible route duration limit such as `maxDuration = 30` rather than allowing requests to run indefinitely.
+Production Hygiene
 
-## AI tools built this
+The application is deployed on Vercel and has been tested through the public production URL.
 
-AI assistance was used during development for code generation, debugging, documentation, and project-structure suggestions. The generated code was reviewed and adapted for this project rather than being treated as an unquestioned final implementation. No private API keys or secrets were supplied to the repository.
+For future API/AI integrations, production protection should include:
 
-## Git hygiene
+- Input length limits
+- Rate limiting
+- Appropriate streaming "maxDuration"
+- Server-side storage of API keys
+- Never exposing API keys in client-side code
 
-Do not commit:
+How AI Tools Built This Project
 
-- `.env.local`
-- API keys
-- passwords
-- private credentials
+AI tools were used as development assistance during the project.
 
-`package-lock.json` should be committed so that dependency versions are reproducible.
+They helped with:
 
-## License
+- Generating the initial project structure
+- Creating the Next.js pages
+- Explaining setup and deployment steps
+- Troubleshooting development and deployment issues
+- Drafting and improving documentation
 
-This project is created for educational/capstone purposes.
+The generated code was reviewed, tested locally, and deployed through Vercel.
+
+Git Hygiene
+
+Private environment files and generated build folders are excluded using ".gitignore".
+
+The repository includes "package-lock.json" so that dependency versions can be reproduced consistently.
+
+Current Status
+
+The application is deployed publicly and the main routes have been tested on the production deployment.
+
+Future improvements could include real authentication, database-backed data, and an AI-powered feature with rate limiting and input controls.
